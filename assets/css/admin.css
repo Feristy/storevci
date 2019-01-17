@@ -1,0 +1,185 @@
+.contents{
+    padding: 65px 15px 50px 225px;
+    transition: 0.3s;
+}
+.content-in{padding-left:15px;}
+
+.top-bar{
+	position: fixed;
+    left:0;
+    right:0;
+    z-index: 10;
+    background-color: #337ab7;
+}
+
+.btn-burger{
+    float:left;
+    padding: 14.3px 15px;
+    margin: 0;
+    font-size: 1.5em;
+    color:#fff;
+    line-height: 20px;
+}
+.btn-burger:hover{
+	background-color: #000;
+}
+.navbar-brand, .navbar-brand:hover{color:#fff;}
+.top-bar{
+    position: fixed;
+    left:0;
+    right:0;
+    z-index: 10;
+    background-color: #5cb85c
+}
+.btn-burger{
+    float:left;
+    padding: 13.5px 15px;
+    font-size: 1.5em;
+    line-height:0;
+    color:#fff;
+}
+.btn-burger:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+.brands{
+    float:left;
+    padding: 11.5px 15px;
+    font-size: 1.3em;
+    color:#fff;
+}
+.admin-menu{
+    position: fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width: 210px;
+    margin-top: 48px;
+    padding-top: 10px;
+    background-color: #333;
+    z-index: 9;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+.admin-menu ul li a, .submenu li a{
+    display: block;
+    font-weight: normal;
+    padding:10px 0;
+    padding-left:5px;
+    text-decoration: none;
+    cursor:pointer;
+    color:#fff;
+}
+.admin-menu-first, .admin-menu-active{margin:1px 0;}
+.admin-menu-first:hover{
+    background-color:#5cb85c;
+}
+.admin-menu-active{
+    background-color:#5cb85c;
+}
+.admin-menu-first i, .admin-menu-active i{
+    font-size:1.1em;
+    margin:0 10px;
+}
+.side-in{left:-210px;}
+.submenu{
+    max-height:0;
+    overflow:hidden;
+    transition: max-height 0.3s ease-out;
+    list-style:none;
+    background-color:#555;
+}
+.submenu li{padding-left:4px;}
+.submenu li a:hover{
+    color:#5cb85c;
+}
+.contents{
+    padding: 65px 15px 50px 225px;
+    transition: 0.3s;
+}
+.content-in{padding-left:15px;}
+.table-filter{
+    display:inline-block;
+    width:auto;
+    font-weight: normal;
+}
+.dataTables_length{float:left}
+.dataTables_filter, .dataTables_paginate{float:right;}
+.paginate_button{margin:0 2px;}
+.btn-del{
+    float:left;
+    margin-right: 4px;
+}
+
+.shortcut a{color:#000;}
+.shortcut a:hover{color:#337ab7;}
+.shortcut .img-circle{
+    border: 1px solid #ddd;
+    padding: 8.5px 10px;
+    font-size: 2em;
+}
+.shortcut p{font-size: 1.1em}
+.tb-check{width:30px;}
+.tb-act{
+    width:100px;
+    text-align: center;
+}
+.img-produk{
+    position:relative;
+    display:inline-block;
+}
+.img-select{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:10px 15px;
+}
+.img-select:hover{
+    background-color:#ddd;
+    opacity:0.5;
+}
+.gambar-produk{margin:0 -15px;}
+.gambar-item{
+    position: relative;
+    padding:10px 15px;
+}
+.delete-gambar{
+    display:none;
+    position: absolute;
+    top: 11px;
+    right: 21px;
+    opacity: unset;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+}
+.gambar-item img{border:1px solid #ddd;}
+.gambar-item:hover .delete-gambar{display:block}
+.menu-list li{
+    padding: 8px 15px;
+    border:1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    margin:5px 0;
+    cursor: move;
+    text-align:left;
+}
+.dragged {
+    position: absolute;
+    z-index: 2000;
+}
+ul.menu-list li.placeholder {
+    position: relative;
+    height:40px;
+    border:1px dashed #ddd;
+}
+ul.menu-list li.placeholder:before {
+    position: absolute;
+}
+.set-position{
+    float:right;
+    margin-top:1px;
+}

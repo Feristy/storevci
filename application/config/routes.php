@@ -49,6 +49,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['admin/pengguna'] = 'admin_user';
+$route['admin/tambah-pengguna'] = 'admin_add_user/view';
+$route['admin/edit-pengguna/(:any)'] = 'admin_add_user/view/$1';
+$route['admin/kategori'] = 'admin_kategori';
+$route['admin/gambar'] = 'admin_gambar';
+$route['admin/slide'] = 'admin_slide';
+$route['admin/tambah-slide'] = 'admin_add_slide/view';
+$route['admin/edit-slide/(:any)'] = 'admin_add_slide/view/$1';
+$route['admin/diskon'] = 'admin_diskon';
+$route['admin/tambah-produk'] = 'admin_add_produk/view';
+$route['admin/edit-produk/(:any)'] = 'admin_add_produk/view/$1';
+$route['admin/produk'] = 'admin_produk';
+$route['admin'] = 'admin_dashboard';
+
+$route['history'] = 'public_history';
+$route['shopping-cart'] = 'public_cart/view';
+$route['shopping-cart/(:any)'] = 'public_cart/view/$1';
+$route['produk/(:any)'] = 'public_produk';
+$route['user'] = 'public_user';
+$route['register'] = 'public_register';
+$route['login'] = 'public_login';
+$route['default_controller'] = 'public_home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
