@@ -12,20 +12,24 @@ $(document).ready(function(){
 		if(scr > 100){
 			$('.top-menu').addClass('top-menu-i');
 			$('.brand').addClass('menu-item-i');
+			$('.menu-item p').addClass('menu-item-i');
 			$('.menu-item a').addClass('menu-item-i');
 			$('.cart a').addClass('menu-item-i');
+			$('.cart a').addClass('cart-i');
 		}else{
 			$('.top-menu').removeClass('top-menu-i');
 			$('.brand').removeClass('menu-item-i');
+			$('.menu-item p').removeClass('menu-item-i');
 			$('.menu-item a').removeClass('menu-item-i');
 			$('.cart a').removeClass('menu-item-i');
+			$('.cart a').removeClass('cart-i');
 		}
 	}
 
-	scrollMenu(scr);
+	// scrollMenu(scr);
 
-	$(document).scroll(function(){
-		var scr1 = $(document).scrollTop();
-		scrollMenu(scr1);
-	});
+	// $(document).scroll(function(){
+	// 	var scr1 = $(document).scrollTop();
+	// 	scrollMenu(scr1);
+	// });
 });
