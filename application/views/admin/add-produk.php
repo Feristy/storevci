@@ -14,29 +14,28 @@
 		</div>
 		<div class="form-group">
 			<label>Gambar Produk</label>
-			<div class="panel panel-default">
-  				<div class="panel-body">
-					<button type="button" class="btn btn-default" data-toggle="modal" data-target=".tambah-gambar">Tambah Gambar</button>
-					<div class="gambar-produk">
-						<?php 
-						if(!empty($gambar_produk)):
-							$pos = 0; 
-							foreach ($gambar_produk as $gambar_produk_item):?>
-							<div class="col-md-3 gambar-item img-list" id="<?=$gambar_produk_item->id?>">
-								<img src="<?=base_url('assets/upload/'.$gambar_produk_item->nama)?>" alt="" class="img">
-								<button type="button" class="delete-gambar btn-unstyle" data-id="#<?=$gambar_produk_item->id?>" data-pos="<?=$pos?>"><span aria-hidden="true">&times;</span></button>
-							</div>
-						<?php 
-							$pos++;
-							endforeach;
-						endif;
-						?>
-						<div class="clearfix"></div>
-					</div>
-					<input type="hidden" class="img-pos">
-					<input type="hidden" name="gambar" class="input-gambar" value="<?=@$produk->gambar?>">
+			<button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".tambah-gambar">Tambah Gambar</button>
+				
+				<div class="gambar-produk">
+					<?php 
+					if(!empty($gambar_produk)):
+						$pos = 0; 
+						foreach ($gambar_produk as $gambar_produk_item):?>
+						<div class="col-md-3 col-sm-3 gambar-item img-list" id="<?=$gambar_produk_item->id?>">
+							<img src="<?=base_url('assets/upload/'.$gambar_produk_item->nama)?>" alt="" class="img">
+							<div class="img-select"></div>
+							<button type="button" class="delete-gambar btn-unstyle" data-id="#<?=$gambar_produk_item->id?>" data-pos="<?=$pos?>"><i class="fas fa-times"></i></button>
+						</div>
+					<?php 
+						$pos++;
+						endforeach;
+					endif;
+					?>
+					<div class="clearfix"></div>
 				</div>
-			</div>
+				<input type="hidden" class="img-pos">
+				<input type="hidden" name="gambar" class="input-gambar" value="<?=@$produk->gambar?>">
+			
 		</div>
 	</div>
 	<div class="col-md-4">
@@ -79,10 +78,9 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="title-modal"><b>Gambar</b> <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+        <div class="modal-title"><b>Gambar</b> <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button></div>
       </div>
       <div class="modal-body">
-      	<a href="<?=site_url('admin/gambar')?>" target="blank" class="btn btn-default">Upload Gambar</a>
       	<div class="row">
 			<?php foreach ($gambar as $gambar_item):?>
 			<div class="img-produk close-modal pointer col-md-3 gambar-item" data-id="<?=$gambar_item->id?>" data-url="<?=base_url('assets/upload/'.$gambar_item->nama)?>" data-dismiss="modal" aria-label="Close">
@@ -92,6 +90,10 @@
 			<?php endforeach;?>
 			<div class="clearfix"></div>
 		</div>
+      </div>
+      <div class="modal-footer">
+      	<a href="<?=site_url('admin/gambar')?>" target="blank" class="btn btn-secondary">Upload Gambar</a>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

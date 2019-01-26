@@ -18,9 +18,9 @@
 			<td><?=$produk_item->stok?></td>
 			<td class="tb-act">
 				<div class="btn-group btn-group-xs">
-					<a href="edit-produk/<?=$produk_item->id?>" class="btn btn-primary btn-xs" title="Edit">
-						<i class="fa fa-pencil fa-fw"></i></a>
-					<button type="submit" class="btn btn-danger btn-xs" title="Hapus" name="del" value="<?=$produk_item->id?>">
+					<a href="edit-produk/<?=$produk_item->id?>" class="btn btn-primary btn-table" title="Edit">
+						<i class="fa fa-pencil-alt fa-fw"></i></a>
+					<button type="submit" class="btn btn-danger btn-table" title="Hapus" name="del" value="<?=$produk_item->id?>">
 						<i class="fa fa-times fa-fw"></i></button>
 				</div>
 			</td>

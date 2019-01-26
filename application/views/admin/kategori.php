@@ -12,8 +12,8 @@
 							<li class="btn btn-default btn-lg btn-block" data-id="<?=$kategori_item->id?>">
 								<span><?=$kategori_item->nama?></span>
 								<div class="set-position btn-group btn-group-xs">
-									<button type="button" class="btn btn-primary btn-xs btn-edit" data-toggle="modal" data-target=".edit" data-id="<?=$kategori_item->id?>" data-name="<?=$kategori_item->nama?>"><i class="fa fa-pencil"></i></button>
-									<button type="submit" class="btn btn-danger btn-xs" name="del" value="<?=$kategori_item->id?>"><i class="fa fa-times"></i></button>
+									<button type="button" class="btn btn-primary btn-table btn-edit" data-toggle="modal" data-target=".edit" data-id="<?=$kategori_item->id?>" data-name="<?=$kategori_item->nama?>"><i class="fa fa-pencil-alt"></i></button>
+									<button type="submit" class="btn btn-danger btn-table" name="del" value="<?=$kategori_item->id?>"><i class="fa fa-times"></i></button>
 								</div>
 							</li>
 						<?php endforeach;?>
@@ -22,7 +22,7 @@
 					</div>
 					<input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>">
 					<button class="btn btn-primary" name="up" value="up">Update Position</button>
-					<button type="button" class="btn btn-default btn-add" data-toggle="modal" data-target=".tambah">Tambah</button>
+					<button type="button" class="btn btn-success btn-add" data-toggle="modal" data-target=".tambah">Tambah</button>
 				</form>
 			</div>
 		</div>

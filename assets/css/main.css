@@ -21,6 +21,11 @@
     border-radius: 3px;
 }
 
+.panel{
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+}
+
 .mce-branding-powered-by{display:none;}
 
 .post-file{
@@ -48,4 +53,11 @@
     background: 0 0;
     cursor: inherit;
     display: block;
+}
+.btn-table{
+    display: block;
+    padding: 1px 5px;
+    font-size: 0.8em;
+    width: 28px;
+    margin: 0 auto;
 }

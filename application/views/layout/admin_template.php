@@ -5,8 +5,8 @@
     	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<title><?=$title?></title>
-    	<link rel="stylesheet" href="<?=base_url('assets/css/bootstrap/css/bootstrap.min.css')?>">
-    	<link rel="stylesheet" href="<?=base_url('assets/css/font-awesome/css/font-awesome.min.css')?>">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="stylesheet" href="<?=base_url('assets/css/main.css')?>">
 		<link rel="stylesheet" href="<?=base_url('assets/css/admin.css')?>">
 	</head>
@@ -23,7 +23,7 @@
             <ul class="list-unstyled">
                 <li id="home">
                     <a href="<?=site_url('admin')?>" class="admin-menu-first" data-id="#home">
-                        <i class="fa fa-tachometer fa-fw"></i>
+                        <i class="fa fa-tachometer-alt fa-fw"></i>
                         <span>Dashbord</span>
                     </a>
                 </li>
@@ -71,8 +71,9 @@
 		</div>
 		<div class="contents"><?=$content?></div>
         <div id="data" data-id="#<?=$btn?>"></div>
-		<script type="text/javascript" src="<?=base_url('assets/js/jquery.js')?>"></script>
-		<script type="text/javascript" src="<?=base_url('assets/js/bootstrap/bootstrap.min.js')?>"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
         <script type="text/javascript" src="<?=base_url('assets/js/datatables.min.js')?>"></script>
         <script type="text/javascript" src="<?=base_url('assets/js/jquery-sortable.js')?>"></script>
         <?php if(!empty($sortable)):?>
@@ -114,10 +115,10 @@
         <?php if(!empty($btn_add)):?>
         <script type="text/javascript">
             $(document).ready(function(){
-                var btn = '<button type="button" class="btn btn-default btn-del btn-add" data-toggle="modal" data-target=".tambah">Tambah</button>';
-                var alink = '<a href="<?=@$btn_alink?>" class="btn btn-default btn-del">Tambah</a>';
+                var btn = '<button type="button" class="btn btn-success btn-del btn-add" data-toggle="modal" data-target=".tambah">Tambah</button>';
+                var alink = '<a href="<?=@$btn_alink?>" class="btn btn-success btn-del">Tambah</a>';
                 var btn_del = '<button class="btn btn-danger btn-del" type="submit" name="del-all" value="1">Hapus</button>';
-                var file = '<form class="upload dib btn-del" id="upload-file1" method="post" enctype="multipart/form-data"><div class="post-file"><div class="btn btn-default" href="#">Tambah</div><input type="hidden" name="submit_upload" value="1"><input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>"><input id="input-1" type="file" class="file1" name="upload"></div></form>';
+                var file = '<form class="upload dib btn-del" id="upload-file1" method="post" enctype="multipart/form-data"><div class="post-file"><div class="btn btn-success" href="#">Tambah</div><input type="hidden" name="submit_upload" value="1"><input type="hidden" name="<?=$csrf['name']?>" value="<?=$csrf['hash']?>"><input id="input-1" type="file" class="file1" name="upload"></div></form>';
 
                 $('#myTable').DataTable();
                 $('.dataTables_info').remove();

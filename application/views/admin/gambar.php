@@ -16,7 +16,7 @@
 			<td><input class="check in-check" type="checkbox" name="<?=$gambar_item->id?>" value="<?=$gambar_item->id?>"></td>
 			<td><a href="<?=base_url('assets/upload/'.$gambar_item->nama)?>" target="blank"><?=$gambar_item->nama?></a></td>
 			<td class="tb-act">
-				<button type="submit" class="btn btn-danger btn-xs" title="Hapus" name="del" value="<?=$gambar_item->id?>"><i class="fa fa-times fa-fw"></i></button>
+				<button type="submit" class="btn btn-danger btn-table" title="Hapus" name="del" value="<?=$gambar_item->id?>"><i class="fa fa-times fa-fw"></i></button>
 			</td>
 		</tr>
 	<?php endforeach;?>

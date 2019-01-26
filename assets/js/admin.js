@@ -104,7 +104,7 @@ $(document).ready(function(){
 		var input = $('.input-gambar').val();
 		var input = input != '' ? input+','+id: id;
 
-		$('.gambar-produk').prepend('<div class="col-md-3 gambar-item img-list" id="'+id+'"><img src="'+img+'" alt="" class="img"><button type="button" class="delete-gambar btn-unstyle" data-id="#'+id+'"><span aria-hidden="true">&times;</span></button></div>');
+		$('.gambar-produk').prepend('<div class="col-md-3 col-sm-3 gambar-item img-list" id="'+id+'"><div class="img-screen"><img src="'+img+'" alt="" class="img"><div class="img-select"></div><button type="button" class="delete-gambar btn-unstyle" data-id="#'+id+'"><i class="fas fa-times"></i></button></div></div>');
 		$('.input-gambar').val(input);
 	});
 
