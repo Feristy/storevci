@@ -7,15 +7,15 @@
 		<h4>Informasi Pribadi</h4>
 		<div class="form-group">
 			<label>Nama Pengguna</label>
-			<input type="text" class="form-control" name="name" value="<?=$user->username?>">
+			<input type="text" class="form-control" name="name" value="<?=@$user->username?>">
 		</div>
 		<div class="form-group">
 			<label>email</label>
-			<input type="text" class="form-control" name="email" value="<?=$user->email?>">
+			<input type="text" class="form-control" name="email" value="<?=@$user->email?>">
 		</div>
 		<div class="form-group">
 			<label>Phone</label>
-			<input type="text" class="form-control" name="phone" value="<?=$user->phone?>">
+			<input type="text" class="form-control" name="phone" value="<?=@$user->phone?>">
 		</div>
 		<div class="form-group">
 			<label>Gender</label>
@@ -26,7 +26,7 @@
 		</div>
 		<div class="form-group">
 			<label>Alamat</label>
-			<input type="text" class="form-control" name="alamat" value="<?=$user->alamat?>">
+			<input type="text" class="form-control" name="alamat" value="<?=@$user->alamat?>">
 		</div>
 		<div class="form-group">
 			<label>Gambar Produk</label>
@@ -35,12 +35,12 @@
   				<img src="<?=base_url('assets/upload/'.$gambar_user->nama)?>" alt="" class="img" width="171"><br><br>
   			<?php endif;?>
   			</div>
-  			<input type="hidden" class="input-gambar" name="gambar" value="<?=$user->gambar?>">
+  			<input type="hidden" class="input-gambar" name="gambar" value="<?=@$user->gambar?>">
 			<button type="button" class="btn btn-default add-img-user" data-toggle="modal" data-target=".tambah-gambar">Tambah Gambar</button>
 		</div>
 		<div class="form-group">
 			<label>Tentang</label>
-			<textarea class="form-control" rows="3" name="about"><?=$user->about?></textarea>
+			<textarea class="form-control" rows="3" name="about"><?=@$user->about?></textarea>
 		</div>
 		<br>
 		<h4>Password</h4>

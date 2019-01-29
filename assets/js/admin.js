@@ -98,6 +98,8 @@ $(document).ready(function(){
 		$('.submit-ktg').text('Edit');
 	});
 
+
+	//input gambar lebih dari satu
 	$('.img-produk').click(function(){
 		var id = $(this).attr('data-id');
 		var img = $(this).attr('data-url');
@@ -106,24 +108,6 @@ $(document).ready(function(){
 
 		$('.gambar-produk').prepend('<div class="col-md-3 col-sm-3 gambar-item img-list" id="'+id+'"><div class="img-screen"><img src="'+img+'" alt="" class="img"><div class="img-select"></div><button type="button" class="delete-gambar btn-unstyle" data-id="#'+id+'"><i class="fas fa-times"></i></button></div></div>');
 		$('.input-gambar').val(input);
-	});
-
-	$('.img-user').click(function(){
-		var img = $(this).attr('data-url');
-
-		$('.gambar-user').html('<img src="'+img+'" alt="" class="img" width="171"><br><br>');
-		$('.add-img-user').attr('data-target', '');
-		$('.add-img-user').removeClass('btn-default').addClass('btn-danger');
-		$('.add-img-user').text('Hapus Gambar');
-		$('.add-img-user').removeClass('add-img-user').addClass('del-img-user');
-	});
-
-	$(document).on('click', '.del-img-user', function(){
-		$('.gambar-user').html('');
-		$(this).attr('data-target', '.tambah-gambar');
-		$(this).text('Tambah Gambar');
-		$(this).removeClass('btn-danger').addClass('btn-default');
-		$(this).removeClass('del-img-user').addClass('add-img-user');
 	});
 
 	$(document).on('click', '.delete-gambar', function(){
@@ -140,5 +124,27 @@ $(document).ready(function(){
 			}
 		}
 		$('.input-gambar').val(a);
+	});
+
+	//input satu gambar
+	$('.img-add').click(function(){
+		var img = $(this).attr('data-img');
+		var url = $(this).attr('data-url');
+
+		$('.gambar-user').html('<img src="'+url+'" alt="" class="img"><br><br>');
+		$('.input-gambar').val(img);
+		$('.add-img-user').attr('data-target', '');
+		$('.add-img-user').text('Hapus Gambar');
+		$('.add-img-user').removeClass('btn-secondary').addClass('btn-danger');
+		$('.add-img-user').removeClass('add-img-user').addClass('del-img-user');
+	});
+
+	$(document).on('click', '.del-img-user', function(){
+		$('.gambar-user').html('');
+		$('input-gambar').val('');
+		$(this).attr('data-target', '.tambah-gambar');
+		$(this).text('Tambah Gambar');
+		$(this).removeClass('btn-danger').addClass('btn-secondary');
+		$(this).removeClass('del-img-user').addClass('add-img-user');
 	});
 });
