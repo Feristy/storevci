@@ -61,7 +61,7 @@ class Admin_add_produk extends CI_Controller {
 		$content['title'] = !empty($id) ? 'Edit '.$title: 'Tambah '.$title;
 		$content['btn'] = 'produk';
 		$this->load->view('layout/admin_template', $content);
-		$id = !empty($id) ? $id: $this->general->last('produk')->id;
+		$id = !empty($id) ? $id: @$this->general->last('produk')->id;
 		$this->general->reload('admin/edit-produk/'.@$id, array('add', 'edit'));
 	}
 }

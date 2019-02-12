@@ -16,9 +16,9 @@
 			<td><?=$user_item->username?></td>
 			<td class="tb-act">
 				<div class="btn-group btn-group-xs">
-					<a href="edit-pengguna/<?=$user_item->id?>" class="btn btn-primary btn-xs" title="Edit"<?=$role?>>
-						<i class="fa fa-pencil fa-fw"></i></a>
-					<button type="submit" class="btn btn-danger btn-xs" title="Hapus" name="del" value="<?=$user_item->id?>"<?=$role?>>
+					<a href="edit-pengguna/<?=$user_item->id?>" class="btn btn-primary btn-table" title="Edit"<?=$role?>>
+						<i class="fa fa-pencil-alt fa-fw"></i></a>
+					<button type="submit" class="btn btn-danger btn-table" title="Hapus" name="del" value="<?=$user_item->id?>"<?=$role?>>
 						<i class="fa fa-times fa-fw"></i></button>
 				</div>
 			</td>

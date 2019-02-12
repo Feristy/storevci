@@ -5,36 +5,41 @@ class Public_cart extends CI_Controller {
 
 	public function view($id = '')
 	{
-		// if(!empty($id)){
-		// 	if(empty($this->session->userdata('cart'))){
-		// 		$id_cart = time();
-		// 		$this->db->insert('cart', array(
-		// 				'id_cart' => $id_cart,
-		// 				''
-		// 			));
-		// 	}else{
-		// 		$id_produk = $this->general->read('cart', array('id_cart' => $this->session->userdata('cart')))->id_produk;
-		// 		$produk = explode(',', $id_produk);
+		//if(!empty($id)){
+			//$produk = $this->general->read('produk', array('id' => $id));
+			//if(!$this->session->has_userdata('cart')){
+				// $s_produk = json_decode($this->session->userdata('cart'));
+				// $s = count($s_produk);
+				// $s_produk[$s] = array('user' => 1, 'produk' => $id, 'barang' => 1, 'harga' => $produk->harga);
+			//}else{
+				
+			//}
+			$dd = $this->session->userdata('cart');
 
-		// 		$this->db->where('id_cart', $this->session->userdata('cart'));
-		// 		$this->db->update('cart', array('id_produk' => ));
-		// 	}
-		// }
+			$dd = json_decode($dd);
+			$d = count($dd);
 
-		// $sd = array(
-		// 		'indomie' => array('count' => 2, 'harga' => 2000),
-		// 		'mie sedap' => array('count' => 3, 'harga' => 2300)
-		// 	);
-		$sd = array(
-				array('name' => 'indomie', 'count' => 2, 'harga' => 2300),
-				array('name' => 'mie sedap', 'count' => 4, 'harga' => 4000)
+
+			$dd[] = array(
+				'user' => 1,
+				'produk' => 2,
+				'barang' => 1,
+				'harga' => 2000
 			);
-		$sd = json_encode($sd);
-		$dd = json_decode($sd);
-		var_dump($dd[0]->name);
 
-		$data['sign'] = $this->general->read('user', array('id' => $this->session->userdata('user')));
-		$data['produk'] = $this->general->read_by('produk');
+			$ss = 
+
+			$ss = json_encode($ss);
+
+			//$this->session->set_userdata('cart', $ss);
+			var_dump();
+		//}
+
+		$data['csrf'] = array(
+			        'name' => $this->security->get_csrf_token_name(),
+			        'hash' => $this->security->get_csrf_hash()
+			    );
+
 		$content['content'] = $this->load->view('public/cart', $data, true);
 		$content['title'] = 'Shopping Cart - Feya Store';
 		$this->load->view('layout/public_template', $content);

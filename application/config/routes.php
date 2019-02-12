@@ -64,8 +64,8 @@ $route['admin/produk'] = 'admin_produk';
 $route['admin'] = 'admin_dashboard';
 
 $route['history'] = 'public_history';
-$route['shopping-cart'] = 'public_cart/view';
-$route['shopping-cart/(:any)'] = 'public_cart/view/$1';
+$route['cart'] = 'public_cart/view';
+$route['cart/(:any)'] = 'public_cart/view/$1';
 $route['produk/(:any)'] = 'public_produk';
 $route['user'] = 'public_user';
 $route['register'] = 'public_register';

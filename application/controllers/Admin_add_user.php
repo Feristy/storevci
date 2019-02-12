@@ -45,7 +45,7 @@ class Admin_add_user extends CI_Controller {
 						'password' => password_hash($this->input->post('pass'), PASSWORD_DEFAULT),
 						'email' => $this->input->post('email'),
 						'phone' => $this->input->post('phone'),
-						'alamat' => $this->input->post('alamat'),
+						'address' => $this->input->post('alamat'),
 						'gender' => $this->input->post('gender'),
 						'about' => $this->input->post('about'),
 						'gambar' => $this->input->post('gambar')
@@ -75,7 +75,7 @@ class Admin_add_user extends CI_Controller {
 						'username' => $this->input->post('name'),
 						'email' => $this->input->post('email'),
 						'phone' => $this->input->post('phone'),
-						'alamat' => $this->input->post('alamat'),
+						'address' => $this->input->post('alamat'),
 						'gender' => $this->input->post('gender'),
 						'about' => $this->input->post('about'),
 						'gambar' => $this->input->post('gambar')
@@ -105,9 +105,9 @@ class Admin_add_user extends CI_Controller {
 		$data['user'] = $user;
 		$data['id'] = $id;
 		$select = 'selected="selected"';
-		$data['gender'] = $user->gender == 'Laki - Laki' ? $select: '';
-		$data['gender1'] = $user->gender == 'Perempuan' ? $select: '';
-		$data['gambar_user'] = $this->general->read('gambar', array('id' => $user->gambar));
+		$data['gender'] = !empty($user->gender) && $user->gender == 'Laki - Laki' ? $select: '';
+		$data['gender1'] = !empty($user->gender) && $user->gender == 'Perempuan' ? $select: '';
+		$data['gambar_user'] = $this->general->read('gambar', array('id' => @$user->gambar));
 		$data['gambar'] = $this->general->read('gambar');
 		$data['title1'] = !empty($id) ? 'Edit Pengguna': 'Tambah Pengguna';
 		$data['msg'] = $this->input->cookie('msg');
@@ -123,7 +123,13 @@ class Admin_add_user extends CI_Controller {
 		$content['title'] = !empty($id) ? 'Edit '.$title: 'Tambah '.$title;
 		$content['btn'] = 'user';
 		$this->load->view('layout/admin_template', $content);
-		$id = !empty($id) ? $id: $this->general->last('user')->id;
-		$this->general->reload('admin/edit-pengguna/'.$id, array('add', 'edit'));
+		
+		$in_url = array_keys($this->uri->uri_to_assoc(0))[0];
+		if($this->form_validation->run() == FALSE && $in_url == 'tambah-pengguna'){
+			$this->general->reload('admin/tambah-pengguna/', array('add'));
+		}else{
+			$id = !empty($id) ? $id: @$this->general->last('user')->id;
+			$this->general->reload('admin/edit-pengguna/'.$id, array('add', 'edit'));
+		}
 	}
 }

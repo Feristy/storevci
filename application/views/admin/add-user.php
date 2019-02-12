@@ -1,5 +1,7 @@
 <?=$msg?>
-<h3><?=$title1?></h3>
+<h3 class="dib"><?=$title1?></h3>
+<a href="<?=site_url('admin/tambah-slide/')?>" class="btn btn-success">Tambah</a>
+<br>
 <br>
 <form method="post">
 <div class="row">
@@ -36,7 +38,7 @@
   			<?php endif;?>
   			</div>
   			<input type="hidden" class="input-gambar" name="gambar" value="<?=@$user->gambar?>">
-			<button type="button" class="btn btn-default add-img-user" data-toggle="modal" data-target=".tambah-gambar">Tambah Gambar</button>
+			<button type="button" class="btn btn-secondary add-img-user" data-toggle="modal" data-target=".tambah-gambar">Tambah Gambar</button>
 		</div>
 		<div class="form-group">
 			<label>Tentang</label>
@@ -67,19 +69,22 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="title-modal"><b>Gambar</b> <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+        <div class="modal-title"><b>Gambar</b> <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button></div>
       </div>
       <div class="modal-body">
-      	<a href="<?=site_url('admin/gambar')?>" target="blank" class="btn btn-default">Upload Gambar</a>
       	<div class="row">
 			<?php foreach ($gambar as $gambar_item):?>
-			<div class="img-user close-modal pointer col-md-3 gambar-item" data-url="<?=base_url('assets/upload/'.$gambar_item->nama)?>" data-dismiss="modal" aria-label="Close">
+			<div class="img-add close-modal pointer col-md-3 gambar-item" data-img="<?=$gambar_item->nama?>" data-url="<?=base_url('assets/upload/'.$gambar_item->nama)?>" data-dismiss="modal" aria-label="Close">
 				<img src="<?=base_url('assets/upload/'.$gambar_item->nama)?>" alt="..." class="img">
 				<div class="img-select"></div>
 			</div>
 			<?php endforeach;?>
 			<div class="clearfix"></div>
 		</div>
+      </div>
+      <div class="modal-footer">
+      	<a href="<?=site_url('admin/gambar')?>" target="blank" class="btn btn-secondary">Upload Gambar</a>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

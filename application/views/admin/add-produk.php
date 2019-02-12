@@ -1,5 +1,7 @@
 <?=$msg?>
-<h3><?=$title1?></h3>
+<h3 class="dib"><?=$title1?></h3>
+<a href="<?=site_url('admin/tambah-produk/')?>" class="btn btn-success">Tambah</a>
+<br>
 <br>
 <form method="post">
 <div class="row">
