@@ -63,6 +63,25 @@
 			<input type="number" class="form-control" name="berat" title="gram" value="<?=@$produk->berat?>">
 		</div>
 		<div class="form-group">
+			<label>Ukuran</label>
+			<div class="input-group mb-3">
+			  <input type="text" class="form-control input-tag-size" aria-label="Recipient's username" aria-describedby="button-addon2">
+			  <div class="input-group-append">
+			    <button class="btn btn-outline-secondary btn-tag-size" type="button" id="button-addon2">Submit</button>
+			  </div>
+			</div>
+			<div class="form-tag-size"></div>
+			<input type="hidden" class="input-size">
+		</div>
+		<div class="form-group">
+			<label>Warna</label>
+			<div class="form-group">
+				<input type="color" class="form-input-color">
+			</div>
+			<div class="form-tag-color"></div>
+			<input type="hidden" name="color" class="input-color">
+		</div>
+		<div class="form-group">
 			<label>Diskon Produk</label>
 			<input type="number" class="form-control" name="diskon" title="persen" value="<?=@$produk->diskon?>">
 		</div>

@@ -147,4 +147,42 @@ $(document).ready(function(){
 		$(this).removeClass('btn-danger').addClass('btn-secondary');
 		$(this).removeClass('del-img-user').addClass('add-img-user');
 	});
+
+
+	//Script Input Tag
+	function tagIt(data){
+		var alltag = document.getElementsByClassName(data);
+		var alldata = '';
+		for(var i = 0; i < alltag.length; i++){
+			var datas = alltag[i].getAttribute('data-input');
+
+			alldata += datas + ',';
+		}
+		return alldata;
+	}
+
+	$(document).on('click', '.btn-tag-size', function(){
+		var intag = $('.input-tag-size').val();
+		$('.input-tag-size').val('');
+		$('.form-tag-size').append('<li class="list-size list-size-'+intag+' btn btn-success btn-sm" data-input="'+intag+'">'+intag+' <span class="remove-tag" data-id=".list-size-'+intag+'"><i class="fas fa-times"></i></span></li>');
+		$('.input-size').val(tagIt('list-size'));
+	});
+
+	$(document).on('click', '.remove-tag', function(){
+		var id = $(this).attr('data-id');
+		$(id).remove();
+		$('.input-size').val(tagIt('list-size'));
+	});
+
+	$(document).on('change', '.form-input-color', function(){
+		var color = $(this).val();
+		$('.form-tag-color').append('<li class="list-color" style="background-color:'+color+'" data-input="'+color+'"><span class="remove-color"><i class="fas fa-times"></i></span></li>')
+		$('.input-color').val(tagIt('list-color'));
+	});
+
+	$(document).on('click', '.list-color', function(){
+		$(this).remove();
+		var id = $(this).attr('data-input');
+		$('.input-color').val(tagIt('list-color'));
+	});
 });
