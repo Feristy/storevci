@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2019 at 08:37 PM
+-- Generation Time: Feb 14, 2019 at 07:47 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -38,8 +38,25 @@ CREATE TABLE `gambar` (
 --
 
 INSERT INTO `gambar` (`id`, `nama`) VALUES
-(1, 'download.jpg'),
-(2, 'u_10161494.jpg');
+(3, 'slide1.jpg'),
+(4, 'slide2.jpg'),
+(5, 'slide3.jpg'),
+(6, 'product-01.jpg'),
+(7, 'product-02.jpg'),
+(8, 'product-03.jpg'),
+(9, 'product-04.jpg'),
+(10, 'product-05.jpg'),
+(11, 'product-06.jpg'),
+(12, 'product-07.jpg'),
+(13, 'product-08.jpg'),
+(14, 'product-09.jpg'),
+(15, 'product-10.jpg'),
+(16, 'product-11.jpg'),
+(17, 'product-12.jpg'),
+(18, 'product-13.jpg'),
+(19, 'product-14.jpg'),
+(20, 'product-15.jpg'),
+(21, 'product-16.jpg');
 
 -- --------------------------------------------------------
 
@@ -65,6 +82,24 @@ INSERT INTO `kategori` (`id`, `nama`, `slug`, `position`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pesanan`
+--
+
+CREATE TABLE `pesanan` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_produk` varchar(200) NOT NULL,
+  `jasa_pengiriman` varchar(200) NOT NULL,
+  `alamat` text NOT NULL,
+  `harga` varchar(50) NOT NULL,
+  `bukti_pembayaran` text NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `date` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `produk`
 --
 
@@ -73,6 +108,8 @@ CREATE TABLE `produk` (
   `nama` varchar(220) NOT NULL,
   `harga` varchar(220) NOT NULL,
   `berat` varchar(220) NOT NULL,
+  `ukuran` varchar(200) NOT NULL,
+  `warna` varchar(200) NOT NULL,
   `stok` varchar(220) NOT NULL,
   `gambar` varchar(500) NOT NULL,
   `kategori` varchar(220) NOT NULL,
@@ -84,9 +121,10 @@ CREATE TABLE `produk` (
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`id`, `nama`, `harga`, `berat`, `stok`, `gambar`, `kategori`, `diskon`, `deskripsi`) VALUES
-(1, 'Tas abu abu', '200000', '20', '10', '1', 'Fashion', '', ''),
-(2, 'smart tv', '20000000', '1000', '10', '2', 'Elektronik', '', 'ini adalah tv bagus dan berkualitas');
+INSERT INTO `produk` (`id`, `nama`, `harga`, `berat`, `ukuran`, `warna`, `stok`, `gambar`, `kategori`, `diskon`, `deskripsi`) VALUES
+(3, 'Produk', '200000', '1', '', '', '20', '6', 'Fashion', '', 'Produk ini adalah produk yang sangat berkualitas super berkualitas yang sangat bagus untuk anda.'),
+(4, 'Produk1', '200000', '1', '', '', '20', '7', 'Fashion', '', 'Produk ini adalah produk yang sangat berkualitas untuk anda.'),
+(5, 'Produk2', '20000', '20', '', '', '20', '8', 'Fashion', '', 'Produk ini adalah produk yang sangat berkualitas untuk anda.');
 
 -- --------------------------------------------------------
 
@@ -99,8 +137,18 @@ CREATE TABLE `slide` (
   `img` text NOT NULL,
   `title` varchar(20) NOT NULL,
   `sub_title` varchar(50) NOT NULL,
+  `btn_text` varchar(200) NOT NULL,
   `position` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `slide`
+--
+
+INSERT INTO `slide` (`id`, `img`, `title`, `sub_title`, `btn_text`, `position`) VALUES
+(1, 'slide1.jpg', 'Fashion', 'Apapun Fashion Yang Anda Butuhkan Kami Sediakan', 'View Collection', 0),
+(2, 'slide2.jpg', 'Fashion', 'Apapun Fashion Yang Anda Butuhkan Kami Sediakan', 'View Collection', 0),
+(3, 'slide3.jpg', 'Fashion', 'Apapun Fashion Yang Anda Butuhkan Kami Sediakan', 'View Collection', 0);
 
 -- --------------------------------------------------------
 
@@ -122,6 +170,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `phone`, `address`, `gender`, `about`, `gambar`, `role`) VALUES
+(1, 'alis', '$2y$10$BPBDfvCrm7.T2PrYZHcVY.Z3KYYVgCaoIcEbH5lCkb102H4ZfctCa', 'alis_alisa@alis.com', '', '', 'Perempuan', '', 'download.jpg', 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -135,6 +190,12 @@ ALTER TABLE `gambar`
 -- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pesanan`
+--
+ALTER TABLE `pesanan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -163,7 +224,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `gambar`
 --
 ALTER TABLE `gambar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -172,22 +233,28 @@ ALTER TABLE `kategori`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
