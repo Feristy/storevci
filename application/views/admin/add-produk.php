@@ -65,13 +65,13 @@
 		<div class="form-group">
 			<label>Ukuran</label>
 			<div class="input-group mb-3">
-			  <input type="text" class="form-control input-tag-size" aria-label="Recipient's username" aria-describedby="button-addon2">
+			  <input type="text" class="form-control input-tag-size" aria-describedby="button-addon2">
 			  <div class="input-group-append">
 			    <button class="btn btn-outline-secondary btn-tag-size" type="button" id="button-addon2">Submit</button>
 			  </div>
 			</div>
 			<div class="form-tag-size"></div>
-			<input type="hidden" class="input-size">
+			<input type="hidden" class="input-size" name="ukuran">
 		</div>
 		<div class="form-group">
 			<label>Warna</label>
@@ -79,7 +79,7 @@
 				<input type="color" class="form-input-color">
 			</div>
 			<div class="form-tag-color"></div>
-			<input type="hidden" name="color" class="input-color">
+			<input type="hidden" name="warna" class="input-color">
 		</div>
 		<div class="form-group">
 			<label>Diskon Produk</label>
